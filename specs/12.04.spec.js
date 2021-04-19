@@ -14,7 +14,7 @@ const { BaseFields } = require("../framework/pages/BaseFields");
 const { AdditionalFields } = require("../framework/pages/AdditionalFields");
 const { Buttons } = require("../framework/pages/Buttons");
 
-describe("04.04", function () {
+describe("12.04", function () {
   let browser = null;
   let page = null;
 
@@ -26,14 +26,13 @@ describe("04.04", function () {
     page = await context.newPage();
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto("http://alfa-gisogd.gemsdev.ru:8000");
-    const [response] = await Promise.all([page.waitForResponse('**/api/kazan/register-document/24'), buttons.done()]);
   });
 
   afterEach(async () => {
     await browser.close();
   });
 
-  it("04.04", async function () {
+  it("12.04", async function () {
     const mainPage = new MainPage(page);
     await mainPage.login("Inenashev", "9Rota73420!");
     const navigationPanel = new NavigationPanel(page);
@@ -44,18 +43,19 @@ describe("04.04", function () {
     const documentType = new DocumentType(page);
     const baseFields = new BaseFields(page);
     const buttons = new Buttons(page);
+    const additionFields = new AdditionalFields(page);
     await project.selectionProject(); //Выбор проекта
     await navigationPanel.reestr(); //Панель навигации - реестр
     await claimRegister.selectionRegister(); //Номер записи учета требований
     await claimRegisterEntry.placementProcess(); //К процессу размещения
     await registrationProcess.AddDocument(); //Добавить документ
-    await documentType.DocNGPGO();
-    //await baseFields.base("04.04", "2011-01-31");
+    await documentType.DocReservMun();
+    await baseFields.base("12.04", "2011-01-31");
+    await additionFields.daterezerv("2017-01-22");
 
     await buttons.next();
     await registrationProcess.Countour();
-    //await buttons.done();
-    //const [response] = await Promise.all([page.waitForResponse('**/api/kazan/register-document/24'), buttons.done()]);
+    await buttons.done();
     await browser.close();
   });
 });

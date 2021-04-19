@@ -248,6 +248,42 @@ class DocumentType {
     );
     await this.page.click('"Градостроительный план земельного участка"');
   }
+
+  //13.02
+  async DocHistoryExpertize() {
+    await this.page.fill(
+      'input[type="text"]',
+      "Заключение государственной историко-культурной экспертизы"
+    );
+    await this.page.click(
+      '"Заключение государственной историко-культурной экспертизы"'
+    );
+  }
+  //13.03
+  async DocZacEcological() {
+    await this.page.fill(
+      'input[type="text"]',
+      "Заключение государственной экологической экспертизы"
+    );
+    await this.page.click(
+      '"Заключение государственной экологической экспертизы"'
+    );
+  }
+
+  //13.04
+  async DocRS() {
+    await this.page.fill('input[type="text"]', "Разрешение на строительство");
+    await this.page.click('"Разрешение на строительство"');
+  }
+
+  //13.10
+  async DocOtchetEngIz() {
+    await this.page.fill(
+      'input[type="text"]',
+      "Результаты инженерных изысканий "
+    );
+    await this.page.click('"Результаты инженерных изысканий "');
+  }
 }
 module.exports = {
   DocumentType,
