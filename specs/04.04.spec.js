@@ -49,7 +49,7 @@ describe("04.04", function () {
     await claimRegisterEntry.placementProcess(); //К процессу размещения
     await registrationProcess.AddDocument(); //Добавить документ
     await documentType.DocNGPGO();
-    await baseFields.base("04.04", "2011-01-31");
+    //await baseFields.base("04.04", "2011-01-31");
 
     await buttons.next();
     await registrationProcess.Countour();
