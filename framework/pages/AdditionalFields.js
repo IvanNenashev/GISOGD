@@ -49,6 +49,29 @@ class AdditionalFields {
     await this.page.click("div:nth-of-type(8) .field");
     await this.page.click("text=Искусственно создаваемый ЗУ");
   }
+
+  //ЗОУИТ
+  async zouit() {
+    await this.page.click('a:has-text("Добавить")');
+    await this.page.click("div:nth-of-type(8) .field");
+    await this.page.click(
+      ':nth-match(:text("Водоохранные (рыбоохранные) зоны"), 2)'
+    );
+  }
+  //ЗУ добавить-выбрать
+  async zuadd() {
+    await this.page.click('a:has-text("Добавить")');
+    await this.page.fill("div:nth-of-type(8) .field", "16:50:220734:4");
+    await this.page.click("text=Земельный участок №16:50:220734:4");
+  }
+
+  //Срок резервирования земель + ЗУ
+  async daterezerv(date) {
+    await this.page.fill(':nth-match(input[type="date"], 2)', date);
+    await this.page.click('a:has-text("Добавить")');
+    await this.page.fill("div:nth-of-type(9) .field", "16:50:220734:4");
+    await this.page.click("text=Земельный участок №16:50:220734:4");
+  }
 }
 module.exports = {
   AdditionalFields,
