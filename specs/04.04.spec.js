@@ -26,6 +26,7 @@ describe("04.04", function () {
     page = await context.newPage();
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto("http://alfa-gisogd.gemsdev.ru:8000");
+    const [response] = await Promise.all([page.waitForResponse('**/api/kazan/register-document/24'), buttons.done()]);
   });
 
   afterEach(async () => {
@@ -53,7 +54,8 @@ describe("04.04", function () {
 
     await buttons.next();
     await registrationProcess.Countour();
-    await buttons.done();
+    //await buttons.done();
+    //const [response] = await Promise.all([page.waitForResponse('**/api/kazan/register-document/24'), buttons.done()]);
     await browser.close();
   });
 });
