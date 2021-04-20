@@ -92,6 +92,21 @@ class AdditionalFields {
     );
     await this.page.click("text=Тестовый объект строительства");
   }
+  //13.06
+  async dociz() {
+    await this.page.click('input[type="checkbox"]');
+    await this.page.click('a:has-text("Добавить")');
+    await this.page.fill("div:nth-of-type(9) .field", "16:50:220734:4");
+    await this.page.click("text=Земельный участок №16:50:220734:4");
+  }
+  //13.07
+  async docexpertize(date) {
+    await this.page.fill("div:nth-of-type(7) .field", date);
+    await this.page.click('input[type="checkbox"]');
+    await this.page.click('a:has-text("Добавить")');
+    await this.page.fill("div:nth-of-type(10) .field", "16:50:220734:4");
+    await this.page.click("text=Земельный участок №16:50:220734:4");
+  }
 }
 module.exports = {
   AdditionalFields,

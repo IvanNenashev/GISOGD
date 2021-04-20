@@ -14,7 +14,7 @@ const { BaseFields } = require("../framework/pages/BaseFields");
 const { AdditionalFields } = require("../framework/pages/AdditionalFields");
 const { Buttons } = require("../framework/pages/Buttons");
 
-describe("13.10", function () {
+describe("13.05", function () {
   let browser = null;
   let page = null;
 
@@ -32,7 +32,7 @@ describe("13.10", function () {
     await browser.close();
   });
 
-  it("13.10", async function () {
+  it("13.05", async function () {
     const mainPage = new MainPage(page);
     await mainPage.login("Inenashev", "9Rota73420!");
     const navigationPanel = new NavigationPanel(page);
@@ -49,9 +49,9 @@ describe("13.10", function () {
     await claimRegister.selectionRegister(); //Номер записи учета требований
     await claimRegisterEntry.placementProcess(); //К процессу размещения
     await registrationProcess.AddDocument(); //Добавить документ
-    await documentType.DocOtchetEngIz();
-    await baseFields.base("13.10", "2011-01-31");
-    await additionFields.daterezerv("2017-01-22");
+    await documentType.DocGisogdRSStop();
+    await baseFields.base("13.05", "2011-01-31");
+    await additionFields.zuadd();
 
     await buttons.next();
     await registrationProcess.Countour();
