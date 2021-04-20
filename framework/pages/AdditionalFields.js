@@ -107,6 +107,49 @@ class AdditionalFields {
     await this.page.fill("div:nth-of-type(10) .field", "16:50:220734:4");
     await this.page.click("text=Земельный участок №16:50:220734:4");
   }
+
+  //13.18
+  async docrs(stage) {
+    await this.page.click("div:nth-of-type(7) .field");
+    await this.page.click("text=Строительство линейного объекта");
+    await this.page.fill("div:nth-of-type(8) .field", stage);
+    await this.page.click("div:nth-of-type(10) .link");
+    await this.page.fill("div:nth-of-type(10) .field", "16:50:220734:4");
+    await this.page.click("text=Земельный участок №16:50:220734:4");
+    await this.page.click("div:nth-of-type(11) .link");
+    await this.page.click("div:nth-of-type(11) .field");
+    await this.page.click("div:nth-of-type(11) li:nth-of-type(2)");
+  }
+  //13.19
+  async techplan() {
+    await this.page.click("div:nth-of-type(8) .link");
+    await this.page.fill("div:nth-of-type(8) .field", "16:50:220734:4");
+    await this.page.click("text=Земельный участок №16:50:220734:4");
+    await this.page.click("div:nth-of-type(9) .link");
+    await this.page.click("div:nth-of-type(9) .field");
+    await this.page.click("div:nth-of-type(9) li:nth-of-type(2)");
+  }
+  //13.20
+  async notificbuilding() {
+    await this.page.click("[for='organization']");
+    await this.page.click("div:nth-of-type(7) .field");
+    await this.page.click("div:nth-of-type(7) li:nth-of-type(2)");
+    await this.page.click("div:nth-of-type(9) .link");
+    await this.page.fill("div:nth-of-type(9) .field", "16:50:220734:4");
+    await this.page.click("text=Земельный участок №16:50:220734:4");
+    await this.page.click("div:nth-of-type(10) .link");
+    await this.page.click("div:nth-of-type(10) .field");
+    await this.page.click("div:nth-of-type(10) li:nth-of-type(2)");
+  }
+
+  //13.24
+  async descript() {
+    await this.page.click("div:nth-of-type(8) .link");
+    await this.page.fill("div:nth-of-type(8) .field", "16:50:220734:4");
+    await this.page.click("text=Земельный участок №16:50:220734:4");
+    await this.page.click("div:nth-of-type(9) .field");
+    await this.page.click("div:nth-of-type(9) li:nth-of-type(2)");
+  }
 }
 module.exports = {
   AdditionalFields,

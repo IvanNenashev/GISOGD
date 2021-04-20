@@ -1,5 +1,5 @@
 const { MainPage } = require("../framework");
-const { chromium } = require("playwright");
+const { chromium, firefox } = require("playwright");
 const { NavigationPanel } = require("../framework/pages/NavigationPanel");
 const { Project } = require("../framework/pages/project");
 const { ClaimsRegister } = require("../framework/pages/ClaimsRegister");
@@ -19,7 +19,7 @@ describe("Noop spec", function () {
   let page = null;
 
   beforeEach(async () => {
-    browser = await chromium.launch({
+    browser = await firefox.launch({
       headless: false,
       slowMo: 1000,
     });

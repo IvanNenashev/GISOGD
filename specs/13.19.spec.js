@@ -1,5 +1,5 @@
 const { MainPage } = require("../framework");
-const { chromium, firefox } = require("playwright");
+const { webkit, chromium, firefox } = require("playwright");
 const { NavigationPanel } = require("../framework/pages/NavigationPanel");
 const { Project } = require("../framework/pages/project");
 const { ClaimsRegister } = require("../framework/pages/ClaimsRegister");
@@ -14,7 +14,7 @@ const { BaseFields } = require("../framework/pages/BaseFields");
 const { AdditionalFields } = require("../framework/pages/AdditionalFields");
 const { Buttons } = require("../framework/pages/Buttons");
 
-describe("Just do it", function () {
+describe("13.19", function () {
   let browser = null;
   let page = null;
 
@@ -32,10 +32,7 @@ describe("Just do it", function () {
     await browser.close();
   });
 
-  it("01.01", async function () {
-    //onst context = await browser.newContext();
-    //const page = await context.newPage();
-    //await page.goto("http://alfa-gisogd.gemsdev.ru:8000");
+  it("13.19", async function () {
     const mainPage = new MainPage(page);
     await mainPage.login("Inenashev", "9Rota73420!");
     const navigationPanel = new NavigationPanel(page);
@@ -45,19 +42,20 @@ describe("Just do it", function () {
     const registrationProcess = new RegistartionProcess(page);
     const documentType = new DocumentType(page);
     const baseFields = new BaseFields(page);
-    const additionFields = new AdditionalFields(page);
     const buttons = new Buttons(page);
+    const additionFields = new AdditionalFields(page);
     await project.selectionProject(); //Выбор проекта
     await navigationPanel.reestr(); //Панель навигации - реестр
     await claimRegister.selectionRegister(); //Номер записи учета требований
     await claimRegisterEntry.placementProcess(); //К процессу размещения
     await registrationProcess.AddDocument(); //Добавить документ
-    await documentType.DocSTPRF();
-    await baseFields.base("12345", "2011-01-31");
-    await additionFields.nameschema();
+    await documentType.DocTechPlan();
+    await baseFields.base("13.19", "2011-01-31");
+    await additionFields.techplan();
 
     await buttons.next();
     await registrationProcess.Countour();
     await buttons.done();
+    await browser.close();
   });
 });

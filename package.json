@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./specs/**/*.spec.js --timeout 100000 -R spec"
+    "test": "mocha ./specs/**/*.spec.js --timeout 20000 -R spec"
   },
   "keywords": [],
   "author": "",

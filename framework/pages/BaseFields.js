@@ -19,11 +19,13 @@ class BaseFields {
     await this.page.fill('input[type="date"]', date);
     //Наименование органа, утвердившего документа
     await this.page.click("div:nth-of-type(5) .field");
-    await this.page.click("text=Gems");
+    await this.page.click("div:nth-of-type(5) li:nth-of-type(2)");
     //Прдыдущая версия документа
     await this.page.click("div:nth-of-type(6) .field");
-    //!!Добавить селектор на документ
-    //!!Добавить Файлы
+    const version = await this.page.$("div:nth-of-type(6) li:nth-of-type(1)");
+    if (version) {
+      await this.page.click("div:nth-of-type(6) li:nth-of-type(1)");
+    } else;
   }
 }
 module.exports = {
