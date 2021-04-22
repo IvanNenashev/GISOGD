@@ -13,6 +13,7 @@ const { DocumentType } = require("../framework/pages/DocumentType");
 const { BaseFields } = require("../framework/pages/BaseFields");
 const { AdditionalFields } = require("../framework/pages/AdditionalFields");
 const { Buttons } = require("../framework/pages/Buttons");
+const { expect } = require("chai");
 
 describe("Just do it", function () {
   let browser = null;
