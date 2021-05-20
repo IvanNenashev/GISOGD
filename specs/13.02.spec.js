@@ -25,7 +25,7 @@ describe("13.02", function () {
     const context = await browser.newContext();
     page = await context.newPage();
     await page.setViewportSize({ width: 1920, height: 1080 });
-    await page.goto("http://alfa-gisogd.gemsdev.ru:8000");
+    await page.goto("https://alfa-gisogd.gemsdev.ru");
   });
 
   afterEach(async () => {
@@ -54,7 +54,7 @@ describe("13.02", function () {
     await additionFields.daterezerv("2017-01-22");
 
     await buttons.next();
-    await registrationProcess.Countour();
+    await registrationProcess.next();
     await buttons.done();
     await browser.close();
   });

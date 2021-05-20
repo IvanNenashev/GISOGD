@@ -14,7 +14,7 @@ const { BaseFields } = require("../framework/pages/BaseFields");
 const { AdditionalFields } = require("../framework/pages/AdditionalFields");
 const { Buttons } = require("../framework/pages/Buttons");
 
-describe("13.11", function () {
+describe("13.31", function () {
   let browser = null;
   let page = null;
 
@@ -32,7 +32,7 @@ describe("13.11", function () {
     await browser.close();
   });
 
-  it("13.11", async function () {
+  it("13.31", async function () {
     const mainPage = new MainPage(page);
     await mainPage.login("Inenashev", "9Rota73420!");
     const navigationPanel = new NavigationPanel(page);
@@ -49,8 +49,8 @@ describe("13.11", function () {
     await claimRegister.selectionRegister(); //Номер записи учета требований
     await claimRegisterEntry.placementProcess(); //К процессу размещения
     await registrationProcess.AddDocument(); //Добавить документ
-    await documentType.DocOtclon();
-    await baseFields.base("13.11", "2011-01-31");
+    await documentType.DemolitionResultsAndMaterials();
+    await baseFields.base("13.31", "2011-01-31");
     await additionFields.zuadd();
 
     await buttons.next();

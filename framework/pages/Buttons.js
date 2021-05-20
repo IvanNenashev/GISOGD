@@ -6,9 +6,9 @@ class Buttons {
     await this.page.click("text=Далее");
   }
   async done() {
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(500);
     await this.page.click('"Разместить в ГИСОГД"');
-    await this.page.waitForTimeout(1000);
+    await this.page.waitForTimeout(1500);
   }
 }
 module.exports = {

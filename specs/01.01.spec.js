@@ -26,7 +26,7 @@ describe("Just do it", function () {
     const context = await browser.newContext();
     page = await context.newPage();
     await page.setViewportSize({ width: 1920, height: 1080 });
-    await page.goto("http://alfa-gisogd.gemsdev.ru:8000");
+    await page.goto("https://alfa-gisogd.gemsdev.ru");
   });
 
   afterEach(async () => {
@@ -36,7 +36,7 @@ describe("Just do it", function () {
   it("01.01", async function () {
     //onst context = await browser.newContext();
     //const page = await context.newPage();
-    //await page.goto("http://alfa-gisogd.gemsdev.ru:8000");
+    //await page.goto("https://alfa-gisogd.gemsdev.ru");
     const mainPage = new MainPage(page);
     await mainPage.login("Inenashev", "9Rota73420!");
     const navigationPanel = new NavigationPanel(page);

@@ -7,7 +7,7 @@ class ClaimsRegister {
     this.page = page;
   }
   async selectionRegister() {
-    await this.page.click("text=26");
+    await this.page.click("tr:nth-of-type(6) > td:nth-of-type(1)");
   }
 }
 module.exports = {

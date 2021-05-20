@@ -21,12 +21,13 @@ describe("Noop spec", function () {
   beforeEach(async () => {
     browser = await firefox.launch({
       headless: false,
-      slowMo: 1000,
     });
-    const context = await browser.newContext();
+    const context = await browser.newContext({
+      recordVideo: { dir: "videos/" },
+    });
     page = await context.newPage();
     //await page.setViewportSize({ width: 1920, height: 1080 });
-    await page.goto("http://alfa-gisogd.gemsdev.ru:8000");
+    await page.goto("https://https://alfa-gisogd.gemsdev.ru");
   });
 
   afterEach(async () => {
@@ -55,7 +56,7 @@ describe("Noop spec", function () {
     await additionFields.zu();
     await additionFields.dateaction("2017-04-01");
     await buttons.next();
-    await registrationProcess.Countour();
+    await registrationProcess.next();
     await buttons.done();
     await browser.close();
   });

@@ -24,7 +24,7 @@
       "type": "pwa-chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-      "url": "http://alfa-gisogd.gemsdev.ru:8000",
+      "url": "https://alfa-gisogd.gemsdev.ru",
       "webRoot": "${workspaceFolder}"
     }
   ]
